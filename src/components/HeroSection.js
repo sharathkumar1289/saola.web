@@ -9,7 +9,7 @@ const HeroSection = () => {
     >
       <div className="md:w-2/3 lg:w-1/2 container px-5 md:px-16 mx-auto">
         <h1 className="capitalize flex flex-col gap-2 md:gap-5 text-xl sm:text-2xl md:text-3xl 2xl:text-xl font-semibold">
-          <p className="capitalize text-3xl md:text-4xl xl:text-5xl font-bold my-3">Welcome to Saola Innovations </p>
+          {/* <p className="capitalize text-3xl md:text-4xl xl:text-5xl font-bold my-3">Welcome to Saola Innovations </p> */}
           <p className="capitalize text-3xl md:text-4xl xl:text-5xl font-bold my-3">Tailoring Technology to Innovations <br></br></p>
         </h1>
         <p className="text-lg leading-normal sm:leading-loose my-4 md:my-6">

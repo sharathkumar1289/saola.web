@@ -48,13 +48,13 @@ const Footer = () => {
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
                 <p className="text-sm leading-loose">
-                  Address: 1234 Innovation Street, City, Country
+                  Address: Nizampet, Hyderabad
                 </p>
                 <p className="text-sm leading-loose">
-                  Email: info@saolainnovations.com
+                  Email: info@saola.in
                 </p>
                 <p className="text-sm leading-loose">
-                  Phone: +123 456 7890
+                  Phone: +91 9281443441
                 </p>
               </div>
               <div>

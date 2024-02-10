@@ -1,20 +1,14 @@
-
-
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
-import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [selectedItem, setSelectedItem] = useState("/");
+  const [selectedItem, setSelectedItem] = useState(""); // Initialize selectedItem state as empty string
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const navbar = useRef();
@@ -60,7 +54,7 @@ const Navbar = () => {
             >
               <CloseOutlinedIcon />
             </button>
-            {["home", "features", "Services", "Projects"].map((link) => (
+            {["home", "features", "Services", "Projects"].map((link) => ( // Updated the array of links
               <li
                 key={link}
                 className={`${
@@ -68,39 +62,13 @@ const Navbar = () => {
                 } capitalize border-b py-4 md:border-none md:py-0 hover:text-rose-600`}
                 onClick={() => setSelectedItem(link)}
               >
-                <Link href={`#${link}`}>{link}</Link>
+                <Link href={link === "Projects" ? "#portfolio" : link === "Services" ? "#services" : `/#${link.toLowerCase()}`}>{link}</Link>
               </li>
             ))}
-            <div className="md:hidden mx-auto absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-3">
-              <Link
-                href="https://www.facebook.com/profile.php?id=100017192357822&sk"
-                target="_blank"
-              >
-                <FacebookOutlinedIcon className="cursor-pointer hover:text-rose-600 text-xl" />
-              </Link>
-              <Link
-                target="_blank"
-                href={"https://www.linkedin.com/in/naseem-khan-275275258/"}
-              >
-                <LinkedInIcon className="cursor-pointer hover:text-rose-600 text-xl" />
-              </Link>
-              <Link target="_blank" href={"https://github.com/NaseemKhan005/"}>
-                <GitHubIcon className="cursor-pointer hover:text-rose-600 text-xl" />
-              </Link>
-              <Link
-                target="_blank"
-                href={"https://www.instagram.com/naseem_khan005/"}
-              >
-                <InstagramIcon className="cursor-pointer hover:text-rose-600 text-xl" />
-              </Link>
-            </div>
           </ul>
         </div>
 
         <div className="flex items-center gap-2 sm:gap-4 md:gap-2 lg:gap-4">
-          {/* <button className="capitalize text-sm sm:text-base border-2 hover:border-2 font-semibold sm:py-3 py-2 px-3 sm:px-6 text-rose-600 border-rose-600 hover:border-rose-600 hover:bg-rose-600 hover:text-white rounded-full">
-            <Link href={"#pricing"}>Contact US</Link>
-          </button> */}
           <button>
             {theme === "dark" ? (
               <LightModeRoundedIcon
